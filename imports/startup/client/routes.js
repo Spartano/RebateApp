@@ -16,6 +16,9 @@ import RecoverPassword from '../../ui/pages/RecoverPassword.js';
 import ResetPassword from '../../ui/pages/ResetPassword.js';
 import Signup from '../../ui/pages/Signup.js';
 
+// importing upload component for our Route
+import Upload from '../../ui/containers/ViewRebates.js'
+
 const authenticate = (nextState, replace) => {
   if (!Meteor.loggingIn() && !Meteor.userId()) {
     replace({
@@ -38,6 +41,8 @@ Meteor.startup(() => {
         <Route name="recover-password" path="/recover-password" component={ RecoverPassword } />
         <Route name="reset-password" path="/reset-password/:token" component={ ResetPassword } />
         <Route name="signup" path="/signup" component={ Signup } />
+
+        <Route name="upload" path="/upload" component={ Upload } onEnter={ authenticate }/>
         <Route path="*" component={ NotFound } />
       </Route>
     </Router>,
