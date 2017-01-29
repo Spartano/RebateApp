@@ -5,7 +5,7 @@ import { Meteor } from 'meteor/meteor';
 import { assert } from 'meteor/practicalmeteor:chai';
 import { resetDatabase } from 'meteor/xolvio:cleaner';
 import { Factory } from 'meteor/dburles:factory';
-import Documents from './documents.js';
+import Files from './files.js';
 import { upsertDocument, removeDocument } from './methods.js';
 
 describe('Documents methods', function () {

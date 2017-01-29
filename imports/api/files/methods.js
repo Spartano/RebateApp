@@ -21,6 +21,7 @@ export const storeUrlInDatabase = new ValidatedMethod({
     },
 });
 
+
 rateLimit({
   methods: [
     storeUrlInDatabase,
