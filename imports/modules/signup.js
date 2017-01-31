@@ -7,6 +7,17 @@ import './validation.js';
 
 let component;
 
+// var mydate = new Date(document.querySelector('[name="birthDate"]').value);
+// var age = 21;
+// var mydate = new Date();
+//     mydate.setFullYear(year, month-1, day);
+//
+//     var currdate = new Date();
+//     currdate.setFullYear(currdate.getFullYear() - age);
+//
+//     return currdate > mydate;
+
+
 const getUserData = () => ({
   email: document.querySelector('[name="emailAddress"]').value,
   password: document.querySelector('[name="password"]').value,

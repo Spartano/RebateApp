@@ -42,7 +42,7 @@ Meteor.startup(() => {
         <Route name="reset-password" path="/reset-password/:token" component={ ResetPassword } />
         <Route name="signup" path="/signup" component={ Signup } />
 
-        <Route name="upload" path="/upload" component={ Upload } onEnter={ authenticate }/>
+        {/* <Route name="upload" path="/upload" component={ Upload } onEnter={ authenticate }/> */}
         <Route path="*" component={ NotFound } />
       </Route>
     </Router>,

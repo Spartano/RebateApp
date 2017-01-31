@@ -1,5 +1,19 @@
 {
   "AWSAccessKeyId" : "AKIAIGUBHBB3BM4DQ4NA",
   "AWSSecretAccessKey" : "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",
-  "AWSRegion" : "us-east-1"
+  "AWSRegion" : "us-east-1",
+
+  "public": {},
+  "private": {
+    "oAuth": {
+      "facebook": {
+        "appId": "390593411293508",
+        "secret": "e3896398a2e2da8d2e01b1311806e2ed"      
+      },
+      "google": {
+        "clientId": "226164356272-i2p79ga1t922fsucjtk2k9uqfn885jl7.apps.googleusercontent.com",
+        "secret": "05TlVaCjdbTzmFKenBzc8C77"
+      }
+    }
+  }
 }

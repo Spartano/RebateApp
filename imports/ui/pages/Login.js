@@ -16,7 +16,7 @@ export default class Login extends React.Component {
     return (
       <div className="Login">
         <Row>
-          <Col xs={ 12 } sm={ 6 } md={ 4 }>
+          <Col xs={ 12 } sm={ 6 } md={ 6 }>
             <h4 className="page-header">Login</h4>
             <form
               ref={ form => (this.loginForm = form) }

@@ -36,3 +36,7 @@ ddp-rate-limiter@1.0.6
 shell-server@0.2.1
 edgee:slingshot
 fortawesome:fontawesome
+accounts-facebook
+accounts-google
+service-configuration
+email

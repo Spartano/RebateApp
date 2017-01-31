@@ -11,12 +11,11 @@ export default class Signup extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
   }
-
   render() {
     return (
       <div className="Signup">
         <Row>
-          <Col xs={ 12 } sm={ 6 } md={ 4 }>
+          <Col xs={ 12 } sm={ 6 } md={ 6 }>
             <h4 className="page-header">Sign Up</h4>
             <form
               ref={ form => (this.signupForm = form) }
@@ -46,6 +45,14 @@ export default class Signup extends React.Component {
                   </FormGroup>
                 </Col>
               </Row>
+              <FormGroup>
+                <ControlLabel>Date Of Birth</ControlLabel>
+                <FormControl
+                  type="date"
+                  ref="birthDate"
+                  name="birthDate"
+                />
+              </FormGroup>
               <FormGroup>
                 <ControlLabel>Email Address</ControlLabel>
                 <FormControl

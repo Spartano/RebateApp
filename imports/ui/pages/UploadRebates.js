@@ -11,7 +11,7 @@ import Files from '../../api/files/files.js';
 
 
 
-class Upload extends React.Component {
+class UploadRebate extends React.Component {
 
   componentWillMount() {
       Session.set( "currentFiles", 0 );
@@ -63,8 +63,8 @@ render() {
 }
 
 
-Upload.propTypes = {
+UploadRebate.propTypes = {
   rebates: React.PropTypes.array,
   filePreviews: React.PropTypes.array
 };
-export default Upload;
+export default UploadRebate
