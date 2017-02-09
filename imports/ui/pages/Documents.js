@@ -8,12 +8,12 @@ const Documents = () => (
     <Row>
       <Col xs={ 12 }>
         <div className="page-header clearfix">
-          <h4 className="pull-left">Documents</h4>
-          <Link to="/documents/new">
+          <h4 className="pull-left">Documents from Ui</h4>
+          <Link to="/upload">
             <Button
               bsStyle="success"
               className="pull-right"
-            >New Document</Button>
+            >Insert Rebate</Button>
           </Link>
         </div>
         <DocumentsList />

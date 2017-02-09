@@ -18,11 +18,26 @@ Files.deny({
 });
 
 Files.schema = new SimpleSchema({
-  url: {
-    type: String,
+  urls: {
+    type: [String],
     label: 'The url of the file.',
   },
-
+  owner: {
+    type: String,
+    label: 'The ID of the user this rebate belongs to.',
+  },
+  added: {
+    type: Date,
+    label: 'The date it was inserted',
+  },
+  email: {
+    type: String,
+    label: 'The ID of the user this rebate belongs to.',
+  },
+  rebate: {
+    type: String,
+    label: 'The ID of the user this rebate belongs to.',
+  },
 });
 
 Files.attachSchema(Files.schema);

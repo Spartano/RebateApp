@@ -3,7 +3,8 @@ import { check } from 'meteor/check';
 import Files from '../files';
 
 Meteor.publish('files.list', () => {
-  var data = Files.find( { "userId": this.userId } );
+
+  var data = Files.find( {} );
 
   if ( data ) {
     return data;

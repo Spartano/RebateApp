@@ -8,7 +8,7 @@
     "oAuth": {
       "facebook": {
         "appId": "390593411293508",
-        "secret": "e3896398a2e2da8d2e01b1311806e2ed"      
+        "secret": "e3896398a2e2da8d2e01b1311806e2ed"
       },
       "google": {
         "clientId": "226164356272-i2p79ga1t922fsucjtk2k9uqfn885jl7.apps.googleusercontent.com",

@@ -18,8 +18,8 @@ const login = () => {
       Bert.alert('Logged in!', 'success');
 
       const { location } = component.props;
-      if (location.state && location.state.nextPathname) {
-        browserHistory.push(location.state.nextPathname);
+      if (location.state && location.state.nextPathname) {        
+        browserHistory.push('/');
       } else {
         browserHistory.push('/');
       }

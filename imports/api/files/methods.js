@@ -8,14 +8,20 @@ import  Files  from './files';
 export const storeUrlInDatabase = new ValidatedMethod({
   name: 'files.insert',
   validate: new SimpleSchema({
-    url: { type: String },
+    _id: { type: String, optional: true },
+    urls: { type: [String] },
+    email: { type: String },
+    rebate: { type: String },
   }).validator(),
-  run({url}) {
-    checkUrlValidity( url );
+  run({ urls, email, rebate }) {
+    checkUrlValidity( urls[0] );
+    checkUrlValidity( urls[1] );
 
     Files.insert({
-          url: url,
-          userId: Meteor.userId(),
+          urls: [urls[0], urls[1]],
+          owner: Meteor.userId(),
+          email: email,
+          rebate: rebate,
           added: new Date()
         });
     },

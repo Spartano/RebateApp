@@ -1,6 +1,7 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
 import { ListGroup, ListGroupItem, Alert } from 'react-bootstrap';
+import RebateUI from './RebateUI.js'
 
 const handleNav = (_id) => {
   browserHistory.push(`/documents/${_id}`);
@@ -8,13 +9,13 @@ const handleNav = (_id) => {
 
 const DocumentsList = ({ documents }) => (
   documents.length > 0 ? <ListGroup className="DocumentsList">
-    {documents.map(({ _id, title }) => (
-      <ListGroupItem key={ _id } onClick={ () => handleNav(_id) }>
-        { title }
+    {documents.map(( rebateP ) => (
+      <ListGroupItem key={ rebateP._id }  >
+      <RebateUI  rebateP={rebateP}/>
       </ListGroupItem>
     ))}
   </ListGroup> :
-  <Alert bsStyle="warning">No documents yet.</Alert>
+  <Alert bsStyle="warning">No Rebates Inserted yet.</Alert>
 );
 
 DocumentsList.propTypes = {
