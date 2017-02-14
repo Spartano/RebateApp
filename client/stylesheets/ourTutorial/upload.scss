@@ -12,18 +12,11 @@
   opacity: 0;
 }
 
-.rebate-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
 .rebate-info {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;;
   align-items: center;
-  border: 1px solid;
-  margin-bottom: 10px;
-  padding-top: 10px;
+  margin-bottom: 20px;
+  padding-top: 20px;
 }

@@ -8,7 +8,7 @@ const Documents = () => (
     <Row>
       <Col xs={ 12 }>
         <div className="page-header clearfix">
-          <h4 className="pull-left">Documents from Ui</h4>
+          <h4 className="pull-left">Rebates Inserted</h4>
           <Link to="/upload">
             <Button
               bsStyle="success"

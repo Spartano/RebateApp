@@ -3,7 +3,7 @@ import { browserHistory } from 'react-router';
 import { ListGroup, ListGroupItem, Alert } from 'react-bootstrap';
 
 
-const DocumentsList = ({ documents }) => (
+const AdminDocumentsList = ({ documents }) => (
   documents.length > 0 ? <ListGroup className="">
     {documents.map(( rebate ) => {
       const { email, url, added, status } = rebate;
@@ -16,6 +16,11 @@ const DocumentsList = ({ documents }) => (
                 <hr/>
                 <p><strong>PaypalEmail: {email}</strong></p>
                 <p> Inserted: { new Date(added).toDateString() } </p>
+                <button className="btn btn-success"
+                  onClick={() => {
+                    //change rebate status in database
+                  }}
+                  >Aprove Rebate</button>
               </div>
         </div>
 
@@ -26,8 +31,8 @@ const DocumentsList = ({ documents }) => (
   <Alert bsStyle="warning">No Rebates Inserted yet.</Alert>
 );
 
-DocumentsList.propTypes = {
+AdminDocumentsList.propTypes = {
   documents: React.PropTypes.array,
 };
 
-export default DocumentsList;
+export default AdminDocumentsList;

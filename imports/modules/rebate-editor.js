@@ -14,11 +14,9 @@ const handleUpsert = () => {
   const upsert = {
     email: document.querySelector('[name="email"]').value.trim(),
     rebate: document.querySelector('[name="rebate"]').value.trim(),
-    rebate_holder: document.querySelector('[name="rebate_holder"]'),
     receipt_holder: document.querySelector('[name="receipt_holder"]')
   };
 
-  console.log(upsert, 'rebate-editor');
   uploadToAmazonS3(upsert, component);
 
 };
@@ -32,9 +30,6 @@ const validate = () => {
       rebate: {
         required: true,
       },
-      rebate_holder: {
-           required: true,
-       },
        receipt_holder: {
             required: true,
         }
@@ -45,10 +40,7 @@ const validate = () => {
       },
       rebate: {
         required: 'Please insert a valid Rebate Code',
-      },
-      rebate_holder: {
-        required: 'Please insert a picture',
-      },
+      },      
       receipt_holder: {
         required: 'Please insert a picture',
       },

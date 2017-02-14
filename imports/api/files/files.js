@@ -18,8 +18,8 @@ Files.deny({
 });
 
 Files.schema = new SimpleSchema({
-  urls: {
-    type: [String],
+  url: {
+    type: String,
     label: 'The url of the file.',
   },
   owner: {
@@ -32,11 +32,15 @@ Files.schema = new SimpleSchema({
   },
   email: {
     type: String,
-    label: 'The ID of the user this rebate belongs to.',
+    label: 'The email of the user this rebate belongs to.',
   },
-  rebate: {
+  status: {
     type: String,
-    label: 'The ID of the user this rebate belongs to.',
+    label: 'The status of the rebate ',
+  },
+  rebateCode: {
+    type: String,
+    label: 'The rebate of the user this rebate belongs to.',
   },
 });
 

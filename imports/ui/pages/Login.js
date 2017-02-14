@@ -21,8 +21,10 @@ export default class Login extends React.Component {
         Meteor[ "loginWithFacebook" ]( options, ( error ) => {
           if ( error ) {
             Bert.alert( error.message, 'danger' );
+          }else{            
+              browserHistory.push('/');
           }
-            browserHistory.push('/');
+
         });
     }
 
@@ -36,7 +38,7 @@ export default class Login extends React.Component {
           if ( error ) {
             Bert.alert( error.message, 'danger' );
           }
-            browserHistory.push('/');      
+            browserHistory.push('/');
         });
     }
 

@@ -9,20 +9,21 @@ export const storeUrlInDatabase = new ValidatedMethod({
   name: 'files.insert',
   validate: new SimpleSchema({
     _id: { type: String, optional: true },
-    urls: { type: [String] },
+    url: { type: String },
     email: { type: String },
     rebate: { type: String },
   }).validator(),
-  run({ urls, email, rebate }) {
-    checkUrlValidity( urls[0] );
-    checkUrlValidity( urls[1] );
+  run({ url, email, rebate, status }) {
+
+    checkUrlValidity( url );
 
     Files.insert({
-          urls: [urls[0], urls[1]],
+          url: url,
           owner: Meteor.userId(),
           email: email,
-          rebate: rebate,
-          added: new Date()
+          rebateCode: rebate,
+          added: new Date(),
+          status: 'Inserted'
         });
     },
 });
@@ -33,5 +34,5 @@ rateLimit({
     storeUrlInDatabase,
   ],
   limit: 3,
-  timeRange: 1000,
+  timeRange: 2000,
 });

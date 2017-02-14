@@ -19,7 +19,7 @@ export default class RebateEditor extends React.Component {
                reader.onload = function (e) {
                    $("<img />", {
                        "src": e.target.result,
-                       "class": "thumb-image"
+                       "class": "img-thumbnail"
                    }).appendTo(image_holder);
 
                }
@@ -59,15 +59,6 @@ export default class RebateEditor extends React.Component {
           defaultValue={ doc && doc.title }
           placeholder="Insert rebate code you have found on bottle!"
         />
-      </FormGroup>
-      <FormGroup className="upload-area">
-        <p className="alert alert-success text-center">
-          <span >Upload Rebate foto by click or drag</span>
-          <input type="file" name="rebate_holder" onChange={this.onUserInput.bind(this)}/>
-        </p>
-          <div className="showImage" id="rebate_holder">
-
-          </div>
       </FormGroup>
 
       <FormGroup className="upload-area">

@@ -19,6 +19,10 @@ import Signup from '../../ui/pages/Signup.js';
 
 // importing upload component for our Route
 import NewRebate from '../../ui/pages/NewRebate.js'
+import Admin from '../../ui/pages/AdminDocuments.js';
+import ViewInserted from '../../ui/containers/AdminDocumentsList.js';
+import ViewCodes from '../../ui/containers/CodesDocumentsList.js';
+import GenerateCodes from '../../ui/pages/GenerateCodes.js'
 
 const authenticate = (nextState, replace) => {
   if (!Meteor.loggingIn() && !Meteor.userId()) {
@@ -44,6 +48,14 @@ Meteor.startup(() => {
         <Route name="signup" path="/signup" component={ Signup } />
 
         <Route name="upload" path="/upload" component={ NewRebate }  onEnter={ authenticate }/>
+        <Route name="admin" path="/admin" component={ Admin } >
+          <Route path="/admin/inserted" component = { ViewInserted } />
+          <Route path="/admin/verified" component={ ViewInserted } />
+          <Route path="/admin/processed" component={ ViewInserted } />
+          <Route path="/admin/generateCodes" component={ GenerateCodes } />
+          <Route path="/admin/viewCodes" component={ ViewCodes } />
+          {/*  <Route path="/admin/payRebates" component={ ViewInserted } /> */}
+      </Route>
         <Route path="*" component={ NotFound } />
       </Route>
     </Router>,

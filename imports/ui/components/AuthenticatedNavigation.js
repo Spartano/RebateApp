@@ -9,14 +9,14 @@ const handleLogout = () => Meteor.logout(() => browserHistory.push('/login'));
 const userName = () => {
   const user = Meteor.user();
   const name = user && user.profile ? user.profile.name : '';
-  return user ? `${name[Object.keys(name)[0]]}` : '';
+  return user ? `${name}` : '';
 };
 
 const AuthenticatedNavigation = () => (
   <div>
     <Nav>
       <LinkContainer to="/documents">
-        <NavItem eventKey={ 2 } href="/documents">Documents</NavItem>
+        <NavItem eventKey={ 2 } href="/documents">Rebates Inserted</NavItem>
       </LinkContainer>
     </Nav>
     <Nav pullRight>
