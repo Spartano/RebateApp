@@ -8,6 +8,7 @@ let _setPlaceholderText = ( string = "Click or Drag a file Here to Uploads", spa
 };
 
 let _addUrlToDatabase = ( url, email, rebate ) => {
+  //storeUrlInDatabase is were all magic happens
   storeUrlInDatabase.call({ url, email, rebate }, ( error ) => {
     if ( error ) {
       Bert.alert( error.reason , 'warning');

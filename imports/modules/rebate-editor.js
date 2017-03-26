@@ -2,7 +2,8 @@
 
 import { browserHistory } from 'react-router';
 import { Bert } from 'meteor/themeteorchef:bert';
-import { upsertDocument } from '../api/documents/methods.js';
+
+
 import uploadToAmazonS3 from './uploadToAmazonS3';
 import './validation.js';
 
@@ -40,7 +41,7 @@ const validate = () => {
       },
       rebate: {
         required: 'Please insert a valid Rebate Code',
-      },      
+      },
       receipt_holder: {
         required: 'Please insert a picture',
       },

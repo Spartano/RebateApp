@@ -23,6 +23,9 @@ import NewRebate from '../../ui/pages/NewRebate.js'
 import Admin from '../../ui/pages/AdminDocuments.js';
 import ViewInserted from '../../ui/containers/AdminDocumentsList.js';
 import ViewCodes from '../../ui/containers/CodesDocumentsList.js';
+
+import ViewVerified from '../../ui/components/adminComponents/VerifiedDocumentsList.js';
+
 import GenerateCodes from '../../ui/pages/GenerateCodes.js'
 
 const authenticate = (nextState, replace) => {
@@ -50,14 +53,14 @@ Meteor.startup(() => {
         <Route name="success" path="/success" component={ Success } />
 
         <Route name="upload" path="/upload" component={ NewRebate }  onEnter={ authenticate }/>
-        
+
         <Route name="admin" path="/admin" component={ Admin } >
           <Route path="/admin/inserted" component = { ViewInserted } />
           <Route path="/admin/verified" component={ ViewInserted } />
           <Route path="/admin/processed" component={ ViewInserted } />
           <Route path="/admin/generateCodes" component={ GenerateCodes } />
           <Route path="/admin/viewCodes" component={ ViewCodes } />
-          {/*  <Route path="/admin/payRebates" component={ ViewInserted } /> */}
+          <Route path="/admin/payRebates" component={ ViewVerified } />
       </Route>
         <Route path="*" component={ NotFound } />
       </Route>

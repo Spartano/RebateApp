@@ -2,8 +2,9 @@
 
 import React from 'react';
 import { FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
+
 import rebateEditor from '../../modules/rebate-editor.js';
-import uploadToAmazonS3 from '../../modules/uploadToAmazonS3';
+
 
 export default class RebateEditor extends React.Component {
 
@@ -34,6 +35,7 @@ export default class RebateEditor extends React.Component {
     rebateEditor({ component: this });
     setTimeout(() => { document.querySelector('[name="email"]').focus(); }, 0);
   }
+
 
   render() {
     const { doc } = this.props;

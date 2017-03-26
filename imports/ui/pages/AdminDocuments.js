@@ -12,6 +12,11 @@ const Admin = ({ children }) => (
           <div className="row">
         <div className="col-md-3">
             <ul className="nav nav-pills nav-stacked">
+              <li>
+                <Link to="/admin/payRebates">
+                  <i className="fa fa-calendar fa-fw"></i> Pay All Rebates
+                </Link>
+              </li>
                 <li className="active"><a href="#"><i className="fa fa-home fa-fw"></i>Home</a></li>
                 <li>
                   <Link to="/admin/inserted">

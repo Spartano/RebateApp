@@ -6,7 +6,7 @@ import BackgroundVideo from '../components/BackgroundVideo.js';
 class App extends React.Component {
   constructor (props) {
     super(props);
-    this.state = {      
+    this.state = {
       bgPosition : 0
     };
   }
@@ -18,14 +18,18 @@ class App extends React.Component {
   render() {
     return (
       <div className="main">
-        <AppNavigation />
-        <Grid>
-          {React.cloneElement(
-            this.props.children, 
-            { changeBg : this.getBg.bind(this) }
-          )}
-        </Grid>
-        <BackgroundVideo position={ this.state.bgPosition } />
+
+
+
+          <AppNavigation />
+          <Grid>
+            {React.cloneElement(
+              this.props.children,
+              { changeBg : this.getBg.bind(this) }
+            )}
+          </Grid>
+      
+
       </div>
     )
   }

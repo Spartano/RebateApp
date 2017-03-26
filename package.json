@@ -65,9 +65,11 @@
     "babel-runtime": "^6.18.0",
     "bcrypt": "^0.8.7",
     "bootstrap": "^3.3.7",
+    "faker": "^4.1.0",
     "jquery": "^2.2.4",
     "jquery-validation": "^1.15.1",
     "lodash": "^4.17.4",
+    "meteor-node-stubs": "^0.2.6",
     "react": "^15.3.2",
     "react-addons-pure-render-mixin": "^15.3.2",
     "react-bootstrap": "^0.30.5",
@@ -75,6 +77,7 @@
     "react-komposer": "^1.13.1",
     "react-router": "^3.0.0",
     "react-router-bootstrap": "^0.23.1",
+    "request": "^2.81.0",
     "style-it": "^1.5.5"
   }
 }
