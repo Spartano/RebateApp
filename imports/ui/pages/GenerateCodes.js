@@ -24,7 +24,6 @@ handleSubmit(e) {
 }
 
   render() {
-
     return (
       <div>
         <h1>GENERATE CODES</h1>

@@ -26,7 +26,7 @@ export default class RebateEditor extends React.Component {
                image_holder.show();
                reader.readAsDataURL(e.target.files[0]);
            }else {
-              Bert.alert("This browser does not support FileReader.Caontact admin@email.com");
+              Bert.alert("This browser does not support FileReader. Contact admin@email.com");
           }
   }
 
@@ -40,19 +40,20 @@ export default class RebateEditor extends React.Component {
     return (<form
       ref={ form => (this.documentEditorForm = form) }
       onSubmit={ event => event.preventDefault() }
+      className="rebate-container"
     >
       <FormGroup>
-        <ControlLabel>Paypal Email</ControlLabel>
+        <ControlLabel className="emailControl">Paypal Email Address</ControlLabel>
         <FormControl
           type="email"
           name="email"
           defaultValue={ doc && doc.title }
-          placeholder="Insert paypal email to wich you want you're money acredited!"
+          placeholder="Let us know where to send your rebate!"
         />
       </FormGroup>
 
       <FormGroup>
-        <ControlLabel>Rebate Code</ControlLabel>
+        <ControlLabel className="rebateControl">Rebate Code</ControlLabel>
         <FormControl
           type="text"
           name="rebate"
@@ -62,8 +63,9 @@ export default class RebateEditor extends React.Component {
       </FormGroup>
 
       <FormGroup className="upload-area">
+        <ControlLabel className="receiptControl">Picture of Receipt</ControlLabel>
         <p className="alert alert-success text-center">
-          <span >Upload Receipt foto by click or drag</span>
+          <span>click or drag</span>
           <input type="file" name="receipt_holder" onChange={this.onUserInput.bind(this)}/>
         </p>
           <div className="showImage" id="receipt_holder">
@@ -71,8 +73,8 @@ export default class RebateEditor extends React.Component {
           </div>
       </FormGroup>
 
-      <Button type="submit" bsStyle="success">
-        { doc && doc._id ? 'Save Changes' : 'Add Rebate Code' }
+      <Button type="submit" bsStyle="success" className="rebate-submit">
+        { doc && doc._id ? 'Save Changes' : 'Submit' }
       </Button>
     </form>);
   }

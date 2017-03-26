@@ -1,5 +1,6 @@
 import { Slingshot } from 'meteor/edgee:slingshot';
 import { storeUrlInDatabase } from '../api/files/methods.js';
+import { browserHistory } from 'react-router';
 
 let _getFileFromInput = ( input ) => input.files[0];
 let _setPlaceholderText = ( string = "Click or Drag a file Here to Uploads", span) => {
@@ -12,7 +13,7 @@ let _addUrlToDatabase = ( url, email, rebate ) => {
       Bert.alert( error.reason , 'warning');
       _setPlaceholderText('Warning from database');
     }else{
-      Bert.alert( "File uploaded to Amazon S3!", "success");
+      //Bert.alert( "File uploaded to Amazon S3!", "success");
       receipt_holder.empty();
       _setPlaceholderText();
     }
@@ -28,7 +29,7 @@ let _uploadFileToAmazon= (file, email, rebate) => {
       Bert.alert( error.message , 'warning');
       _setPlaceholderText('warning from amazon');
     }else{
-         _addUrlToDatabase ( url, email, rebate )
+         _addUrlToDatabase ( url, email, rebate );
        }
     });
 };
