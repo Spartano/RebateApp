@@ -6,7 +6,7 @@ import { Button, Modal, Alert } from 'react-bootstrap';
 
 import request from 'request';
 
-const wellStyles = {maxWidth: 400, margin: '0 auto 10px'};
+const wellStyles = {maxWidth: 500, margin: '0 auto 10px'};
 
 export default class ViewVerified extends Component {
   constructor(props) {
@@ -69,7 +69,7 @@ export default class ViewVerified extends Component {
               <Button bsStyle="info">This TOKEN expires in {Math.floor(this.state.expires_in/3600)} hours and {Math.floor((this.state.expires_in/60)%60)} minutes</Button>
               <p>
                 <br/>
-                <Button bsStyle="danger"  onClick={this.payAllRebates.bind(this)}>Pay All Rebates</Button>
+                <Button bsStyle="danger"  onClick={this.payAllRebates.bind(this)}>Pay All</Button>
                 <span> or </span>
                 <Button >Hide Alert</Button>
               </p>

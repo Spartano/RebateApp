@@ -75,7 +75,7 @@ export default class RebateEditor extends React.Component {
           </div>
       </FormGroup>
 
-      <Button type="submit" bsStyle="success" className="rebate-submit">
+      <Button type="submit" bsStyle="success">
         { doc && doc._id ? 'Save Changes' : 'Submit' }
       </Button>
     </form>);
