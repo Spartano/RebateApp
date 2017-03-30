@@ -38,18 +38,22 @@ Meteor.startup(() => {
   render(
     <Router history={ browserHistory }>
       <Route path="/" component={ App }>
-        <IndexRoute name="index" component={ Index } />
+        {/*<IndexRoute name="index" component={ Index } />*/}
+        <IndexRoute name="index" component={ Login } />       
+        <Route name="rebate" path="/rebate" component={ NewRebate }  onEnter={ authenticate }/>
+        <Route name="success" path="/success" component={ Success } />
+
+
         <Route name="documents" path="/documents" component={ Documents } onEnter={ authenticate } />
         <Route name="newDocument" path="/documents/new" component={ NewDocument } onEnter={ authenticate } />
         <Route name="editDocument" path="/documents/:_id/edit" component={ EditDocument } onEnter={ authenticate } />
         <Route name="viewDocument" path="/documents/:_id" component={ ViewDocument } onEnter={ authenticate } />
-        <Route name="login" path="/login" component={ Login } />
+        {/*<Route name="login" path="/login" component={ Login } />*/}
         <Route name="recover-password" path="/recover-password" component={ RecoverPassword } />
         <Route name="reset-password" path="/reset-password/:token" component={ ResetPassword } />
         <Route name="signup" path="/signup" component={ Signup } />
-        <Route name="success" path="/success" component={ Success } />
 
-        <Route name="upload" path="/upload" component={ NewRebate }  onEnter={ authenticate }/>
+        {/*<Route name="upload" path="/upload" component={ NewRebate }  onEnter={ authenticate }/>*/}
         
         <Route name="admin" path="/admin" component={ Admin } >
           <Route path="/admin/inserted" component = { ViewInserted } />

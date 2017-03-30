@@ -10,9 +10,9 @@ const DocumentsList = ({ documents }) => (
 
       return ( <ListGroupItem key={ rebate._id } >
         <div className="panel panel-info">
-              <div className="panel-heading">{status} And Beeing Processed</div>
+              <div className="panel-heading">{status} And Being Processed</div>
               <div className="panel-body">
-                <img src={url} alt="rebatePic" width="400" height="200" />
+                <img src={url} alt="rebatePic" height="200" />
                 <hr/>
                 <p><strong>PaypalEmail: {email}</strong></p>
                 <p> Inserted: { new Date(added).toDateString() } </p>

@@ -3,7 +3,7 @@
 import React from 'react';
 import { FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
 import rebateEditor from '../../modules/rebate-editor.js';
-import uploadToAmazonS3 from '../../modules/uploadToAmazonS3';
+//import accessCamera from '../../modules/access-camera.js';
 
 export default class RebateEditor extends React.Component {
 
@@ -33,22 +33,26 @@ export default class RebateEditor extends React.Component {
   componentDidMount() {
     rebateEditor({ component: this });
     setTimeout(() => { document.querySelector('[name="email"]').focus(); }, 0);
+    //accessCamera();
   }
 
   render() {
     const { doc } = this.props;
+
     return (<form
       ref={ form => (this.documentEditorForm = form) }
       onSubmit={ event => event.preventDefault() }
       className="rebate-container"
     >
+
+    <div className="email-code">
       <FormGroup>
-        <ControlLabel className="emailControl">Paypal Email Address</ControlLabel>
+        <ControlLabel className="emailControl has-error">Paypal Email Address</ControlLabel>
         <FormControl
           type="email"
           name="email"
           defaultValue={ doc && doc.title }
-          placeholder="Let us know where to send your rebate!"
+          placeholder="myemail@example.com"
         />
       </FormGroup>
 
@@ -58,9 +62,10 @@ export default class RebateEditor extends React.Component {
           type="text"
           name="rebate"
           defaultValue={ doc && doc.title }
-          placeholder="Insert rebate code you have found on bottle!"
+          placeholder="MYCODE123-10-LONELY"
         />
       </FormGroup>
+    </div>
 
       <FormGroup className="upload-area">
         <ControlLabel className="receiptControl">Picture of Receipt</ControlLabel>
@@ -74,7 +79,9 @@ export default class RebateEditor extends React.Component {
       </FormGroup>
 
       <Button type="submit" bsStyle="success" className="rebate-submit">
-        { doc && doc._id ? 'Save Changes' : 'Submit' }
+        {/*{ doc && doc._id ? 'Save Changes' : 'Submit' }*/}
+       
+        <i className="fa fa-send-o fa-3x"></i> 
       </Button>
     </form>);
   }

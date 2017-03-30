@@ -2,12 +2,13 @@ import React from 'react';
 import { Grid } from 'react-bootstrap';
 import AppNavigation from '../containers/AppNavigation.js';
 import BackgroundVideo from '../components/BackgroundVideo.js';
+import ProgressBar from "bootstrap-progress-bar";
 
 class App extends React.Component {
   constructor (props) {
     super(props);
     this.state = {      
-      bgPosition : 0
+      bgPosition : 100
     };
   }
 
@@ -25,6 +26,7 @@ class App extends React.Component {
             { changeBg : this.getBg.bind(this) }
           )}
         </Grid>
+        {/*<ProgressBar width="50%" />*/}
         <BackgroundVideo position={ this.state.bgPosition } />
       </div>
     )
