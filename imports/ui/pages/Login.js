@@ -10,7 +10,6 @@ export default class Login extends React.Component {
   componentDidMount() {
     handleLogin({ component: this });
     this.props.changeBg(0);
-
   }
 
 
