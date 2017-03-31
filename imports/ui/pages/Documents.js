@@ -21,7 +21,7 @@ class Documents extends React.Component {
                 <Button
                   bsStyle="success"
                   className="pull-right"
-                >Insert Rebate</Button>
+                >Insert Another Rebate</Button>
               </Link>
             </div>
             <DocumentsList />
