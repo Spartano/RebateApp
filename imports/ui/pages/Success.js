@@ -31,8 +31,8 @@ class Success extends React.Component {
                 </Link>
 
                 <Button bsStyle="success" onClick={this.claimAnother}>
-                    <h4>CLAIM</h4>
-                    <h4>ANOTHER</h4>
+                    <h4>NEW</h4>
+                    <h4>REBATE</h4>
                     <div>
                         <i className="fa fa-retweet fa-4x"></i>  
                     </div>

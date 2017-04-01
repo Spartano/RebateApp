@@ -100,7 +100,7 @@
   max-width: 500px;
   justify-content: space-between;
   padding: 0px 10px;
-  margin-top: 45vh;
+  //margin-top: 45vh;
 }
 
 //styles for the social login buttons
@@ -174,23 +174,31 @@
 }
 
 //error messages on rebate submit form
-label#email-error, label#rebate-error {
-  float: right;
-  margin-top: -1.1em;
-  margin-right: 15px;
-  font-size: 2em;
+label#email-error, label#rebate-error, label#receipt_holder-error {
+  // float: right;
+  // margin-top: -1.1em;
+  // margin-right: 15px;
+  // font-size: 2em;
+  background-color: #666;
+  
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 label#receipt_holder-error {
-  float: right;
-  font-size: 2em;
-  margin-top: -.1em;
+  // float: right;
+  // font-size: 2em;
+  // margin-top: -.1em;
+ 
 }
+
+
 
 //-----SUCCESS PAGE-----
 
 .success-buttons button {
-  width: 150px;
+  width: 100px;
   -webkit-transition: all 250ms;
   -moz-transition: all 250ms;
   transition: all 250ms;
@@ -210,6 +218,7 @@ label#receipt_holder-error {
   max-width: 500px;
   justify-content: space-between;
   bottom: 50px;
+  //margin-top: 45vh;
 }
 
 // p.speech {
@@ -255,5 +264,9 @@ label#receipt_holder-error {
 .list-group {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
+.list-group-item {
+  width: 350px;
+}

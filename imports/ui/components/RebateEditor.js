@@ -80,8 +80,8 @@ export default class RebateEditor extends React.Component {
 
       <Button type="submit" bsStyle="success" className="rebate-submit">
         {/*{ doc && doc._id ? 'Save Changes' : 'Submit' }*/}
-       
-        <i className="fa fa-send-o fa-3x"></i> 
+        <h4>Submit</h4>
+        <i className="fa fa-plus fa-3x"></i> 
       </Button>
     </form>);
   }

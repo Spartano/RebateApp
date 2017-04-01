@@ -43,24 +43,51 @@ export default class Login extends React.Component {
       });
   }
 
-  
+  //Only render component after 
+  ifLoggedIn() {
+    return Meteor.user() ? true : false;
+  }
 
   render() {
+
+
     return (
       <div className="Login">
+      {this.ifLoggedIn() ?
+        <div className="success-buttons">
+            <Link to={'/documents'}>
+                <Button bsStyle="primary">
+                    <h4>MY</h4>
+                    <h4>REBATES</h4>
+                    <i className="fa fa-th-list fa-4x"></i> 
+                </Button>
+            </Link>
 
-        {/*<h4 className="headline-bg">Login to claim your rebate</h4>*/}
+            <Link to="/rebate">
+              <Button bsStyle="success">
+                  <h4>NEW</h4>
+                  <h4>REBATE</h4>
+                  <div>
+                      <i className="fa fa-usd fa-4x"></i>  
+                  </div>
+              </Button>
+            </Link>
 
+
+        </div>
+        : 
         <div className="login-buttons">
           <Button bsStyle="primary" data-social-login="loginWithFacebook" onClick={this.loginWithFacebook} className="heartbeatOne">
             <i className="fa fa-facebook fa-4x"></i> 
           </Button>
-
           <Button bsStyle="danger"  onClick={this.loginWithGoogle} className="heartbeatTwo">
             <i className="fa fa-google fa-4x"></i>  
           </Button>
         </div>
+      } 
       </div>
     );
   }
 }
+
+

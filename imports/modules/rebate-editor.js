@@ -36,13 +36,13 @@ const validate = () => {
     },
     messages: {
       email: {
-        required: '*',
+        required: 'Please enter a valid email address',
       },
       rebate: {
-        required: '*',
+        required: 'This rebate code is not valid',
       },      
       receipt_holder: {
-        required: '*',
+        required: "Please upload a photo of your receipt",
       },
     },
     submitHandler() { handleUpsert(); },

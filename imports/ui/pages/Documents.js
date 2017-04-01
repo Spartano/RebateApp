@@ -24,7 +24,9 @@ class Documents extends React.Component {
                 >Insert Another Rebate</Button>
               </Link>
             </div>
+       
             <DocumentsList />
+            
           </Col>
         </Row>
       </div>
