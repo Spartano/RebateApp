@@ -7,6 +7,20 @@ import handleLogin from '../../modules/login';
 
 
 export default class Login extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      loggedIn: false
+    }
+  }
+
+  componentWillUpdate() {
+      this.setState ({
+      loggedIn: this.ifLoggedIn()
+    })
+  }
+
   componentDidMount() {
     handleLogin({ component: this });
     this.props.changeBg(0);
@@ -53,7 +67,7 @@ export default class Login extends React.Component {
 
     return (
       <div className="Login">
-      {this.ifLoggedIn() ?
+      {this.state.loggedIn ?
         <div className="success-buttons">
             <Link to={'/documents'}>
                 <Button bsStyle="primary">
