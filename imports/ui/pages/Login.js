@@ -90,14 +90,46 @@ export default class Login extends React.Component {
 
         </div>
         : 
-        <div className="login-buttons">
-          <Button bsStyle="primary" data-social-login="loginWithFacebook" onClick={this.loginWithFacebook} className="heartbeatOne">
-            <i className="fa fa-facebook fa-4x"></i> 
-          </Button>
-          <Button bsStyle="danger"  onClick={this.loginWithGoogle} className="heartbeatTwo">
-            <i className="fa fa-google fa-4x"></i>  
-          </Button>
-        </div>
+
+        <div> 
+          <form
+              ref={ form => (this.loginForm = form) }
+              className="email-login"
+              onSubmit={ this.handleSubmit }
+            >
+              <FormGroup>
+                <ControlLabel>Email Address</ControlLabel>
+                <FormControl
+                  type="email"
+                  ref="emailAddress"
+                  name="emailAddress"
+                  placeholder="Email Address"
+                />
+              </FormGroup>
+              <FormGroup>
+                <ControlLabel>
+                  <span className="pull-left">Password</span>
+                  <Link className="pull-right" to="/recover-password">Forgot Password?</Link>
+                </ControlLabel>
+                <FormControl
+                  type="password"
+                  ref="password"
+                  name="password"
+                  placeholder="Password"
+                />
+              </FormGroup>
+              <Button type="submit" bsStyle="success">Login</Button>
+              <Link className="pull-right" to="/signup"><Button type="default" bsStyle="default">Register</Button></Link>
+            </form>
+          <div className="login-buttons">
+            <Button bsStyle="primary" data-social-login="loginWithFacebook" onClick={this.loginWithFacebook} className="heartbeatOne">
+              <i className="fa fa-facebook fa-4x"></i> 
+            </Button>
+            <Button bsStyle="danger"  onClick={this.loginWithGoogle} className="heartbeatTwo">
+              <i className="fa fa-google fa-4x"></i>  
+            </Button>
+          </div>
+        </div>          
       } 
       </div>
     );

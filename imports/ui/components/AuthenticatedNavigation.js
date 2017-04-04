@@ -4,7 +4,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 
-const handleLogout = () => Meteor.logout(() => browserHistory.push('/'));
+const handleLogout = () => Meteor.logout(() => browserHistory.push('/login'));
 
 const userName = () => {
   const user = Meteor.user();

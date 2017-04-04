@@ -7,8 +7,8 @@ const PublicNavigation = () => (
     <LinkContainer to="signup">
       <NavItem eventKey={ 1 } href="/signup">Sign Up</NavItem>
     </LinkContainer>
-    <LinkContainer to="/">
-      <NavItem eventKey={ 2 } href="/">Log In</NavItem>
+    <LinkContainer to="/login">
+      <NavItem eventKey={ 2 } href="/login">Log In</NavItem>
     </LinkContainer>
   </Nav>
 );

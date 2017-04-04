@@ -81,26 +81,28 @@
 	animation: pulsate-fwd 2s ease-in-out 0s infinite both;
 }
 
-.speech-cont {
-  // display: flex;
-  // justify-content: center;
-  // position: fixed;
-}
 
-.speech-bubble {
-  // display: flex;
-  // justify-content: center;
-}
 
 //-----LOGIN PAGE-----
+
+.email-login {
+  max-width: 500px;
+  margin: 0 auto;
+}
 
 .login-buttons {
   display: flex;
   margin: 0 auto;
   max-width: 500px;
   justify-content: space-between;
-  padding: 0px 10px;
+  padding: 50px 10px;
   //margin-top: 45vh;
+}
+
+@media (min-width: 600px) {
+  .login-buttons {
+    padding: 100px 0px;
+  }
 }
 
 //styles for the social login buttons
@@ -165,7 +167,7 @@
   max-height: 170px;
 }
 
-.emailControl, .rebateControl, .receiptControl {
+.control-label {
   background-color: slategray;
   color: white;
   padding: 5px;
