@@ -8,7 +8,7 @@ const handleLogout = () => Meteor.logout(() => browserHistory.push('/login'));
 
 const userName = () => {
   const user = Meteor.user();
-  const name = user && user.profile ? user.profile.name : '';
+  const name = user && user.profile && user.profile.name.first ? user.profile.name.first : user && user.profile ? user.profile.name : '';
   return user ? `${name}` : '';
 };
 
