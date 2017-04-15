@@ -16,15 +16,19 @@ export const storeCodesInDatabase = new ValidatedMethod({
   }).validator(),
   run({ quantity, amount, brand }) {
 
+    // const brandDocument = Brands.findOne({ name: brand });
+    //
+    //     if (!brandDocument) {
+    //       return Meteor.Error('Brand not found!');
+    //     }
+
     _.times(quantity, () => {
 
           const password = Random.hexString(16);
 
           Codes.insert({
             createdAt: new Date(),
-            amount: amount,
             rebateCode: `${password}-${amount}-${brand}`,
-            brand: brand,
         })
 
         });

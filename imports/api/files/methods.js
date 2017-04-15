@@ -17,6 +17,14 @@ export const storeUrlInDatabase = new ValidatedMethod({
 
     checkUrlValidity( url );
 
+    //essiste questo codice nel mio database
+    // Codes.find({ rebate }).fetch(); // [] || [{}, {}];
+    // const code = Codes.findOne({ rebate }); // undefined || {};
+    //
+    // if (code.status !== 'unreedemed') {
+    //   return Meteor.Error();
+    // }
+
     Files.insert({
           url: url,
           owner: Meteor.userId(),
@@ -29,10 +37,11 @@ export const storeUrlInDatabase = new ValidatedMethod({
 });
 
 
+
 rateLimit({
   methods: [
     storeUrlInDatabase,
   ],
   limit: 3,
-  timeRange: 2000,
+  timeRange: 5000 ,
 });

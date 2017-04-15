@@ -20,11 +20,26 @@ export default class Login extends React.Component {
             requestPermissions: [ 'email' ]
           };
 
-        Meteor[ "loginWithFacebook" ]( options, ( error ) => {
+        Meteor.loginWithFacebook( options, ( error ) => {
           if ( error ) {
             Bert.alert( error.message, 'danger' );
-          }else{            
-              browserHistory.push('/upload');
+          }else{
+
+              // Accounts.onCreateUser(function(options, user) {
+              //
+              //   if (!user.services.facebook) {
+              //     return user;
+              //   }
+              //   user.username = user.services.facebook.name;
+              //   user.emails = [
+              //     {
+              //       address: user.services.facebook.email
+              //     }
+              //   ];
+              //
+              //   return user;
+              // });
+                            browserHistory.push('/upload');
           }
 
         });
@@ -52,11 +67,11 @@ export default class Login extends React.Component {
 
         <div className="login-buttons">
           <Button bsStyle="primary" data-social-login="loginWithFacebook" onClick={this.loginWithFacebook} className="heartbeatOne">
-            <i className="fa fa-facebook fa-4x"></i> 
+            <i className="fa fa-facebook fa-4x"></i>
           </Button>
 
           <Button bsStyle="danger"  onClick={this.loginWithGoogle} className="heartbeatTwo">
-            <i className="fa fa-google fa-4x"></i>  
+            <i className="fa fa-google fa-4x"></i>
           </Button>
         </div>
       </div>
