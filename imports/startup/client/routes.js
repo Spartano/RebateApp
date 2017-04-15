@@ -31,7 +31,7 @@ import GenerateCodes from '../../ui/pages/GenerateCodes.js'
 const authenticate = (nextState, replace) => {
   if (!Meteor.loggingIn() && !Meteor.userId()) {
     replace({
-      pathname: '/login',
+      pathname: '/',
       state: { nextPathname: nextState.location.pathname },
     });
   }
@@ -42,6 +42,11 @@ Meteor.startup(() => {
     <Router history={ browserHistory }>
       <Route path="/" component={ App }>
         <IndexRoute name="index" component={ Index } />
+        {/*<IndexRoute name="index" component={ Login } />       */}
+        <Route name="rebate" path="/rebate" component={ NewRebate }  onEnter={ authenticate }/>
+        <Route name="success" path="/success" component={ Success } />
+
+
         <Route name="documents" path="/documents" component={ Documents } onEnter={ authenticate } />
         <Route name="newDocument" path="/documents/new" component={ NewDocument } onEnter={ authenticate } />
         <Route name="editDocument" path="/documents/:_id/edit" component={ EditDocument } onEnter={ authenticate } />
@@ -50,10 +55,14 @@ Meteor.startup(() => {
         <Route name="recover-password" path="/recover-password" component={ RecoverPassword } />
         <Route name="reset-password" path="/reset-password/:token" component={ ResetPassword } />
         <Route name="signup" path="/signup" component={ Signup } />
-        <Route name="success" path="/success" component={ Success } />
 
+<<<<<<< HEAD
         <Route name="upload" path="/upload" component={ NewRebate }  onEnter={ authenticate }/>
 
+=======
+        {/*<Route name="upload" path="/upload" component={ NewRebate }  onEnter={ authenticate }/>*/}
+        
+>>>>>>> 63df1db2e47790dd6a94e756ac03b7f1f9e798a5
         <Route name="admin" path="/admin" component={ Admin } >
           <Route path="/admin/inserted" component = { ViewInserted } />
           <Route path="/admin/verified" component={ ViewInserted } />

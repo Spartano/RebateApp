@@ -6,6 +6,7 @@ import handleSignup from '../../modules/signup';
 export default class Signup extends React.Component {
   componentDidMount() {
     handleSignup({ component: this });
+    this.props.changeBg(0);
   }
 
   handleSubmit(event) {
@@ -16,7 +17,7 @@ export default class Signup extends React.Component {
       <div className="Signup">
         <Row>
           <Col xs={ 12 } sm={ 6 } md={ 6 }>
-            <h4 className="page-header">Sign Up</h4>
+           
             <form
               ref={ form => (this.signupForm = form) }
               onSubmit={ this.handleSubmit }
