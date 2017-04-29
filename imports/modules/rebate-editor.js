@@ -2,11 +2,7 @@
 
 import { browserHistory } from 'react-router';
 import { Bert } from 'meteor/themeteorchef:bert';
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 63df1db2e47790dd6a94e756ac03b7f1f9e798a5
 import uploadToAmazonS3 from './uploadToAmazonS3';
 import './validation.js';
 
@@ -44,13 +40,10 @@ const validate = () => {
         required: 'Please enter a valid email address',
       },
       rebate: {
-<<<<<<< HEAD
-        required: 'Please insert a valid Rebate Code',
-      },
-=======
+
         required: 'This rebate code is not valid',
-      },      
->>>>>>> 63df1db2e47790dd6a94e756ac03b7f1f9e798a5
+      },
+
       receipt_holder: {
         required: "Please upload a photo of your receipt",
       },
@@ -63,5 +56,3 @@ export default function rebateEditor(options) {
   component = options.component;
   validate();
 }
-
-

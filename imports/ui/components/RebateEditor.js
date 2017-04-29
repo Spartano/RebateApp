@@ -4,11 +4,7 @@ import React from 'react';
 import { FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
 
 import rebateEditor from '../../modules/rebate-editor.js';
-<<<<<<< HEAD
 
-=======
-//import accessCamera from '../../modules/access-camera.js';
->>>>>>> 63df1db2e47790dd6a94e756ac03b7f1f9e798a5
 
 export default class RebateEditor extends React.Component {
 
@@ -84,15 +80,12 @@ export default class RebateEditor extends React.Component {
           </div>
       </FormGroup>
 
-<<<<<<< HEAD
-      <Button type="submit" bsStyle="success">
-        { doc && doc._id ? 'Save Changes' : 'Submit' }
-=======
+
       <Button type="submit" bsStyle="success" className="rebate-submit">
         {/*{ doc && doc._id ? 'Save Changes' : 'Submit' }*/}
         <h4>Submit</h4>
-        <i className="fa fa-plus fa-3x"></i> 
->>>>>>> 63df1db2e47790dd6a94e756ac03b7f1f9e798a5
+        <i className="fa fa-plus fa-3x"></i>
+
       </Button>
     </form>);
   }

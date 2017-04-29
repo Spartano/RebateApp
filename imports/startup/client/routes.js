@@ -56,13 +56,10 @@ Meteor.startup(() => {
         <Route name="reset-password" path="/reset-password/:token" component={ ResetPassword } />
         <Route name="signup" path="/signup" component={ Signup } />
 
-<<<<<<< HEAD
+
         <Route name="upload" path="/upload" component={ NewRebate }  onEnter={ authenticate }/>
 
-=======
-        {/*<Route name="upload" path="/upload" component={ NewRebate }  onEnter={ authenticate }/>*/}
-        
->>>>>>> 63df1db2e47790dd6a94e756ac03b7f1f9e798a5
+
         <Route name="admin" path="/admin" component={ Admin } >
           <Route path="/admin/inserted" component = { ViewInserted } />
           <Route path="/admin/verified" component={ ViewInserted } />

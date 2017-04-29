@@ -32,7 +32,6 @@ export default class Login extends React.Component {
   }
 
 
-<<<<<<< HEAD
     loginWithFacebook() {
         let  options = {
             requestPermissions: [ 'email' ]
@@ -59,20 +58,8 @@ export default class Login extends React.Component {
               // });
                             browserHistory.push('/upload');
           }
-=======
-  loginWithFacebook() {
-      let  options = {
-          requestPermissions: [ 'email' ]
-        };
-      Meteor[ "loginWithFacebook" ]( options, ( error ) => {
-        if ( error ) {
-          Bert.alert( error.message, 'danger' );
-        }else{            
-            browserHistory.push('/rebate');
-        }
-      });
-  }
->>>>>>> 63df1db2e47790dd6a94e756ac03b7f1f9e798a5
+        })
+}
 
   loginWithGoogle() {
       let  options = {
@@ -82,11 +69,14 @@ export default class Login extends React.Component {
         if ( error ) {
           Bert.alert( error.message, 'danger' );
         }
+
+        const user = Meteor.users.findOne(Meteor.userId());
+        console.log(user)
           browserHistory.push('/rebate');
       });
   }
 
-  //Only render component after 
+  //Only render component after
   ifLoggedIn() {
     return Meteor.user() ? true : false;
   }
@@ -102,7 +92,7 @@ export default class Login extends React.Component {
                 <Button bsStyle="primary">
                     <h4>MY</h4>
                     <h4>REBATES</h4>
-                    <i className="fa fa-th-list fa-4x"></i> 
+                    <i className="fa fa-th-list fa-4x"></i>
                 </Button>
             </Link>
 
@@ -111,27 +101,16 @@ export default class Login extends React.Component {
                   <h4>NEW</h4>
                   <h4>REBATE</h4>
                   <div>
-                      <i className="fa fa-usd fa-4x"></i>  
+                      <i className="fa fa-usd fa-4x"></i>
                   </div>
               </Button>
             </Link>
 
-<<<<<<< HEAD
-        <div className="login-buttons">
-          <Button bsStyle="primary" data-social-login="loginWithFacebook" onClick={this.loginWithFacebook} className="heartbeatOne">
-            <i className="fa fa-facebook fa-4x"></i>
-          </Button>
 
-          <Button bsStyle="danger"  onClick={this.loginWithGoogle} className="heartbeatTwo">
-            <i className="fa fa-google fa-4x"></i>
-          </Button>
-=======
-
->>>>>>> 63df1db2e47790dd6a94e756ac03b7f1f9e798a5
         </div>
-        : 
+        :
 
-        <div> 
+        <div>
           <form
               ref={ form => (this.loginForm = form) }
               className="email-login"
@@ -163,17 +142,15 @@ export default class Login extends React.Component {
             </form>
           <div className="login-buttons">
             <Button bsStyle="primary" data-social-login="loginWithFacebook" onClick={this.loginWithFacebook} className="heartbeatOne">
-              <i className="fa fa-facebook fa-4x"></i> 
+              <i className="fa fa-facebook fa-4x"></i>
             </Button>
             <Button bsStyle="danger"  onClick={this.loginWithGoogle} className="heartbeatTwo">
-              <i className="fa fa-google fa-4x"></i>  
+              <i className="fa fa-google fa-4x"></i>
             </Button>
           </div>
-        </div>          
-      } 
+        </div>
+      }
       </div>
     );
   }
 }
-
-
