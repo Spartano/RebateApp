@@ -16,24 +16,20 @@ export const storeCodesInDatabase = new ValidatedMethod({
   }).validator(),
   run({ quantity, amount, brand }) {
 
-    // const brandDocument = Brands.findOne({ name: brand });
-    //
-    //     if (!brandDocument) {
-    //       return Meteor.Error('Brand not found!');
-    //     }
+   if(Roles.userIsInRole( Meteor.userId(), 'admin' )) {
+     _.times(quantity, () => {
+           const password = Random.hexString(16);
 
-    _.times(quantity, () => {
+           Codes.insert({
+             createdAt: new Date(),
+             rebateCode: `${password}-${amount}-${brand}`,
+         })
 
-          const password = Random.hexString(16);
-
-          Codes.insert({
-            createdAt: new Date(),
-            rebateCode: `${password}-${amount}-${brand}`,
-        })
-
-        });
-
-
+         });
+   } else {
+     throw new Meteor.Error("logged-out",
+  "The user must be ad admin to create an code.")
+   }
     },
 });
 

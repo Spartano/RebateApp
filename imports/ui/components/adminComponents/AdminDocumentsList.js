@@ -10,7 +10,7 @@ const AdminDocumentsList = ({ documents }) => (
 
       return ( <ListGroupItem key={ rebate._id } >
         <div className="panel panel-info">
-              <div className="panel-heading">Code: {RebateCode}</div>
+              <div className="panel-heading">Code: {rebateCode}</div>
               <div className="panel-body">
                 <img src={url} alt="rebatePic" height="200" />
                 <hr/>

@@ -7,8 +7,7 @@ import { Meteor } from 'meteor/meteor';
 import App from '../../ui/layouts/App.js';
 import Documents from '../../ui/pages/Documents.js';
 import NewDocument from '../../ui/pages/NewDocument.js';
-import EditDocument from '../../ui/containers/EditDocument.js';
-import ViewDocument from '../../ui/containers/ViewDocument.js';
+
 import Index from '../../ui/pages/Index.js';
 import Login from '../../ui/pages/Login.js';
 import Success from '../../ui/pages/Success.js'
@@ -37,6 +36,8 @@ const authenticate = (nextState, replace) => {
   }
 };
 
+
+
 Meteor.startup(() => {
   render(
     <Router history={ browserHistory }>
@@ -49,8 +50,7 @@ Meteor.startup(() => {
 
         <Route name="documents" path="/documents" component={ Documents } onEnter={ authenticate } />
         <Route name="newDocument" path="/documents/new" component={ NewDocument } onEnter={ authenticate } />
-        <Route name="editDocument" path="/documents/:_id/edit" component={ EditDocument } onEnter={ authenticate } />
-        <Route name="viewDocument" path="/documents/:_id" component={ ViewDocument } onEnter={ authenticate } />
+
         <Route name="login" path="/login" component={ Login } />
         <Route name="recover-password" path="/recover-password" component={ RecoverPassword } />
         <Route name="reset-password" path="/reset-password/:token" component={ ResetPassword } />
@@ -60,7 +60,7 @@ Meteor.startup(() => {
         <Route name="upload" path="/upload" component={ NewRebate }  onEnter={ authenticate }/>
 
 
-        <Route name="admin" path="/admin" component={ Admin } >
+        <Route name="admin" path="/admin" component={ Admin } onEnter={ authenticate }>
           <Route path="/admin/inserted" component = { ViewInserted } />
           <Route path="/admin/verified" component={ ViewInserted } />
           <Route path="/admin/processed" component={ ViewInserted } />

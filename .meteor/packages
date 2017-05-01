@@ -40,3 +40,5 @@ accounts-facebook
 accounts-google
 service-configuration
 email
+momentjs:moment
+digilord:faker

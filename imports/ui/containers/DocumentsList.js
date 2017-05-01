@@ -7,8 +7,7 @@ import Loading from '../components/Loading.js';
 const composer = (params, onData) => {
   const subscription = Meteor.subscribe('files.list');
   if (subscription.ready()) {
-    const owner = Meteor.userId();
-    const documents = owner ? Files.find({ owner }).fetch() : [];    
+    const documents =  Files.find().fetch();
     //on data means that thing that will be returned as props to our DocumentList component
     onData(null, { documents });
   }

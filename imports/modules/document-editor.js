@@ -2,7 +2,7 @@
 
 import { browserHistory } from 'react-router';
 import { Bert } from 'meteor/themeteorchef:bert';
-import { upsertDocument } from '../api/documents/methods.js';
+import { upsertDocument } from '../api/_Dummy_documents/methods.js';
 import './validation.js';
 
 let component;
