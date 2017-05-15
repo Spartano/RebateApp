@@ -16,20 +16,20 @@ export const storeCodesInDatabase = new ValidatedMethod({
   }).validator(),
   run({ quantity, amount, brand }) {
 
-    _.times(quantity, () => {
+   if(Roles.userIsInRole( Meteor.userId(), 'admin' )) {
+     _.times(quantity, () => {
+           const password = Random.hexString(16);
 
-          const password = Random.hexString(16);
+           Codes.insert({
+             createdAt: new Date(),
+             rebateCode: `${password}-${amount}-${brand}`,
+         })
 
-          Codes.insert({
-            createdAt: new Date(),
-            amount: amount,
-            rebateCode: `${password}-${amount}-${brand}`,
-            brand: brand,
-        })
-
-        });
-
-
+         });
+   } else {
+     throw new Meteor.Error("logged-out",
+  "The user must be ad admin to create an code.")
+   }
     },
 });
 

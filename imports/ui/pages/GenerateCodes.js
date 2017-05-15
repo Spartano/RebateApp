@@ -3,6 +3,13 @@ import React, { Component } from 'react';
 
 import { Modal, Button, Form, FormGroup, Col, ControlLabel, Checkbox, InputGroup, FormControl } from 'react-bootstrap';
 import { storeCodesInDatabase } from '../../api/codes/methods.js';
+import { seedCollection, clearCollection } from '../../api/seederMethods.js';
+
+var retailers = [
+  "JackDaniels",
+  "Corona"
+];
+
 
 class GenerateCodes extends Component {
 
@@ -34,7 +41,7 @@ handleSubmit(e) {
               Number of Codes
             </Col>
             <Col sm={6}>
-              <FormControl type="number" placeholder=""/>
+              <FormControl type="number" placeholder="10"/>
             </Col>
           </FormGroup>
           <FormGroup controlId="rebate-amount">
@@ -42,7 +49,7 @@ handleSubmit(e) {
               Rebate Amount
             </Col>
             <Col sm={6}>
-              <FormControl type="number" placeholder=""/>
+              <FormControl type="number" placeholder="12$"/>
             </Col>
           </FormGroup>
           <FormGroup controlId="brand-id">
@@ -50,12 +57,16 @@ handleSubmit(e) {
               Brand
             </Col>
             <Col sm={6}>
-              <FormControl type="text" placeholder=""/>
+              <FormControl componentClass="select" placeholder="select">
+                <option value="select">select</option>
+                {
+                  retailers.map( retailer => <option value={retailer}> {retailer} </option>)
+                }
+              </FormControl>
             </Col>
           </FormGroup>
           <button type="submit" className="btn btn-default btn-success col-sm-2 col-sm-offset-5" onClick={this.handleSubmit}><span className="fa fa-id-card"></span> Generate Codes</button>
         </Form>
-
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import { Slingshot } from 'meteor/edgee:slingshot';
 import { storeUrlInDatabase } from '../api/files/methods.js';
 import { browserHistory } from 'react-router';
+import rebateEditor from './rebate-editor.js';
 
 let _getFileFromInput = ( input ) => input.files[0];
 let _setPlaceholderText = ( string = "Click or Drag a file Here to Uploads", span) => {
@@ -14,7 +15,8 @@ let _addUrlToDatabase = ( url, email, rebate ) => {
       Bert.alert( error.reason , 'warning');
       _setPlaceholderText('Warning from database');
     }else{
-      //Bert.alert( "File uploaded to Amazon S3!", "success");
+      Bert.alert( "Rebate Submitted Successfully!", "success");
+      browserHistory.push('/success');
       receipt_holder.empty();
       _setPlaceholderText();
     }

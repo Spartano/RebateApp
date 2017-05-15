@@ -2,7 +2,7 @@ import React from 'react';
 import { ButtonToolbar, ButtonGroup, Button } from 'react-bootstrap';
 import { browserHistory } from 'react-router';
 import { Bert } from 'meteor/themeteorchef:bert';
-import { removeDocument } from '../../api/documents/methods.js';
+import { removeDocument } from '../../api/_Dummy_documents/methods.js';
 
 const handleEdit = (_id) => {
   browserHistory.push(`/documents/${_id}/edit`);

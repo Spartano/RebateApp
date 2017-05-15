@@ -24,7 +24,7 @@ describe('Log In', function () {
       });
     });
 
-    browser.url('http://localhost:3000/login')
+    browser.url('http://localhost:3000/')
            .setValue('[name="emailAddress"]', 'carl.winslow@abc.com')
            .setValue('[name="password"]', 'bigguy1989')
            .submitForm('form');

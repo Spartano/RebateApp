@@ -2,13 +2,12 @@ import { Meteor } from 'meteor/meteor';
 
 import Codes from '../codes';
 
-Meteor.publish('codes.list', () => {
+Meteor.publish('codes.list', function() {
 
-  var data = Codes.find( {} );
-
-  if ( data ) {
-    return data;
+  if ( Roles.userIsInRole( this.userId, 'admin' ) ) {
+    return Codes.find();
+  } else {
+    this.ready();
+    return
   }
-
-  return this.ready();
 });

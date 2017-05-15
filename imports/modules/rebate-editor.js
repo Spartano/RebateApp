@@ -3,7 +3,6 @@
 import { browserHistory } from 'react-router';
 import { Bert } from 'meteor/themeteorchef:bert';
 
-
 import uploadToAmazonS3 from './uploadToAmazonS3';
 import './validation.js';
 
@@ -19,8 +18,9 @@ const handleUpsert = () => {
   };
 
   uploadToAmazonS3(upsert, component);
-
 };
+
+
 
 const validate = () => {
   $(component.documentEditorForm).validate({
@@ -37,13 +37,15 @@ const validate = () => {
     },
     messages: {
       email: {
-        required: 'Please insert a valid PaypPal email!',
+        required: 'Please enter a valid email address',
       },
       rebate: {
-        required: 'Please insert a valid Rebate Code',
+
+        required: 'This rebate code is not valid',
       },
+
       receipt_holder: {
-        required: 'Please insert a picture',
+        required: "Please upload a photo of your receipt",
       },
     },
     submitHandler() { handleUpsert(); },

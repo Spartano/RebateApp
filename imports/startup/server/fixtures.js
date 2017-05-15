@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Accounts } from 'meteor/accounts-base';
 
-if (!Meteor.isProduction) {
+if (Meteor.isProduction) {
   const users = [{
     email: 'admin@admin.com',
     password: 'password',
@@ -21,4 +21,6 @@ if (!Meteor.isProduction) {
       Roles.addUsersToRoles(userId, roles);
     }
   });
+
 }
+console.log(process.env.NODE_ENV)

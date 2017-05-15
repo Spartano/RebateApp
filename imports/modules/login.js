@@ -19,9 +19,9 @@ const login = () => {
 
       const { location } = component.props;
       if (location.state && location.state.nextPathname) {        
-        browserHistory.push('/');
+        browserHistory.push('/login');
       } else {
-        browserHistory.push('/');
+        browserHistory.push('/login');
       }
     }
   });
